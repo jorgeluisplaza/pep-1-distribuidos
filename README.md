@@ -59,11 +59,14 @@ El sistema si posee apertura, debido a que se encuentra implementado bajo una ar
 
 Se realiza un test de inserción de datos sobre sobre el servicio de registrar un permiso.
 Para este test se utilizó la herramienta de JMeter para simular una request de 1000 usuarios paralelos durante 60 segundos, en la cual los primeros 20 segundos son utilizados para ir incrementando el número de usuarios concurrentes de 0 a 1000.
-Estos son los resultados:
 
-Tabla resumen:
-La media, Min y max equivalen al tiempo de respuesta en milisegundos.
-la tasa de error es del 0%, lo que quiere decir que todas las request 
+- **Tabla de resumen**:
+
+![alt text](tabla-resumen-test.png)
+
+- **Grafico tiempo de respuesta**:
+
+![alt text](grafico-tiempo-respuesta.png)
 
 
 Como se puede observar en el gráfico, durante los primeros instantes del test cuando los usuarios concurrentes comenzaban a aumentar, el tiempo de respuesta se aproximaba a los 600 ms, sin embargo, a la medida que incrementaba esta cantidad de usuarios, el tiempo de respuesta también aumentó alcanzando a ser de más de 2 segundos.

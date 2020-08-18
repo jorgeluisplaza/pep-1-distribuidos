@@ -72,3 +72,5 @@ Para este test se utilizó la herramienta de JMeter para simular una request de 
 Como se puede observar en el gráfico, durante los primeros instantes del test cuando los usuarios concurrentes comenzaban a aumentar, el tiempo de respuesta se aproximaba a los 600 ms, sin embargo, a la medida que incrementaba esta cantidad de usuarios, el tiempo de respuesta también aumentó alcanzando a ser de más de 2 segundos.
 
 Uso de recursos en el servidor durante el test:
+
+![alt text](uso-recursos-test.png)

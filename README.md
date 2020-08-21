@@ -36,8 +36,8 @@ Existen dos formas de escalabilidad, la horizontal, que implica que un sistema q
 
 - **Acceso**: Al trabajar con el módulo de Spring data, es posible abstraerse de la ubicación de la base de datos, por lo cual no importa donde esta se encuentre, es posible acceder a los datos tanto de forma local como remota.
 - **Ubicación**: El recurso no se encuentra disponibilizado bajo un dominio web utilizando el protocolo DNS, por lo cual no se cumple con esta característica.
-- **migración**: 
-- **re-localización**:
+- **migración**: La migracion del sistema es posible debido a uso de contenedores a traves de Docker.
+- **re-localización**: Como de momento no se está utilizando el protocolo DNS mencionado anteriormente, el sistema no cuenta con una re-localización apta debido al manejo de IPs que se tiene que efectuar.
 - **Replicación**: El recurso no se encuentra replicado por lo tanto no cumple esta características. Sin embargo, al estar corriendo sobre contenedores, es posible crear réplicas y utilizar un balanceador para que sea transparente por el usuario.
 - **Concurrencia**: Spring tiene la capacidad de manejar múltiples solicitudes de forma concurrente a través de hilos, por lo cual, es posible que haya más de un usuario utilizando el recurso sin notarlo.
 - **Fallas**: Si alguno de los componentes falla (Front-End, Back-End o Base de datos) sería visible para el usuario, ya que el sistema quedaría inutilizable en alguno de estos casos al no contar con réplicas.

@@ -1,0 +1,11 @@
+link del repo:
+
+https://github.com/jorgeluisplaza/pep-1-distribuidos
+
+
+Instrucciones:
+
+En el terminal o consola de comandos, ir a la carpeta comisaria-virtual y ejecutar los comandos
+
+	1. npm install
+	2. npm run dev

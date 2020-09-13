@@ -115,16 +115,16 @@ Se suben los contenedores disponibles del sistema distribuido a la plataforma de
 
 - Escalabilidad (Horizontal): Se cubre con el uso del kubernetes engine que permite escalabilidad horizontal gracias a los nodos disponibles, como también del balanceador de cargas que ofrece.
 
-![alt text](grafico-kubernetes.png)
+![alt text](grafico-kubernetes.PNG)
 
 Disponibilidad: Se ofrece mediante el uso de instancias de Cloud SQL de Google Cloud Platform y el uso de nodos para los contenedores del back, de esta forma si se pierde una instancia primaria, se usa una replicación para mantener disponibles los recursos al cliente.
 
-![alt text](diagrama-base-datos.png)
+![alt text](diagrama-base-datos.PNG)
 
 Transparencia (Replicación): Ahora el sistema cuenta con replicación y es totalmente transparente para el usuario.
 
 Transparencia (Fallas): Nuevamente, al tener el sistema distribuido en distintos nodos e instancias. Es posible que las fallas del sistema sean transparentes al usuario en caso que exista una falla.
 
-![alt text](diagrama-componentes.png)
+![alt text](diagrama-componentes.PNG)
 
 

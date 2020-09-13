@@ -74,3 +74,57 @@ Como se puede observar en el gráfico, durante los primeros instantes del test c
 Uso de recursos en el servidor durante el test:
 
 ![alt text](uso-recursos-test.png)
+
+# Pep 2
+
+
+Ahora, en base a lo descrito en la prueba de Sistemas Distribuidos anterior. Se escogen ciertas propiedades de la teoría para implementar y mejorar el sistema implementado. Las propiedades que no se cumplieron anteriormente, ya sea completa o parcialmente, fueron:
+
+- Transparencia: Ubicacion
+- Transparencia: Re-localizacion
+- Transparencia: Replicacion
+- Transparencia: Fallas
+- Escalabilidad: Horizontal
+- Disponibilidad
+
+Para cada una de las características que no cumple el sistema, se sugieren algunos cambios para solventar
+
+- Transparencia (Ubicación): Actualmente, el sistema no cuenta con un dominio para el protocolo DNS, es decir, para acceder al sitio se necesita utilizar la Ip y el puerto del servidor donde se encuentra. Para este punto, se sugiere obtener un dominio y poner un nombre propio al sistema para que los clientes puedan acceder a través del protocolo DNS en la barra de navegación o un motor de búsquedas.
+
+- Transparencia (Re-localización): Esta característica va de la mano con la ubicación, se necesita un protocolo DNS para solventar la re-ubicación, si llega a haber un cambio de servidor para el sitio web, será totalmente transparente para el cliente utilizando un dominio conocido.
+
+- Transparencia (Replicación): Para que se cumpla, debe existir datos replicados en primer lugar. No se puede esconder una replicación si no existe. En este sentido se puede implementar instancias de google cloud que se detallan en disponibilidad.
+
+- Transparencia (Fallas): Se puede solventar utilizando google cloud, con el sistema de replicacion con postgreSQL (que también permite disponibilidad). De esta forma, si el servidor presenta una falla, puede ser automáticamente redireccionado a uno auxiliar y la falla podría ser invisible para el usuario.
+
+- Escalabilidad (Horizontal): La escalabilidad horizontal se puede solventar con el uso de Kubernetes, al tener empaquetada la aplicación y utilizando contenedores. Es posible tener replicar estos contenedores y generar un balanceo de cargas gracias a la automatización que ofrece Kubernetes. 
+
+- Disponibilidad: Para solventar la disponibilidad que pueda ofrecer el sistema distribuido, se puede utilizar una replicación de los datos guardados en la base de datos. De esta forma, si el sistema llega a presentar alguna falla con respecto a los datos presentes, se puede acudir a su réplica para tener los recursos siempre disponibles al usuario. Lo que se sugiere, es utilizar google cloud. Al tener el sistema en el sistema de nubes de google se puede utilizar lo que se conoce como instancias de Cloud SQL. La configuración que ofrece google para ofrecer alta disponibilidad es la de clusters, donde existen instancias del back-end que están en una primaria y una de espera. En el caso que exista una falla en una instancia, la configuración de google reduce el tiempo de inactividad y los datos seguirán disponibles para el cliente.
+
+
+## Cambios realizados 
+
+Los cambios implementados satisfacen las siguientes características:
+
+- **Transparencia: Replicación**
+- **Escalabilidad: Horizontal**
+- **Disponibilidad**
+- **Transparencia (Fallas)**
+
+Se suben los contenedores disponibles del sistema distribuido a la plataforma de nubes de google (Google Cloud Platform) específicamente se utiliza el engine de Google Kubernetes. Este cuenta con 3 nodos y un balanceador de cargas para el sistema distribuido. Por otra parte, se configura la replicación que se ofrece la PostgreSQL que permite la disponibilidad a través de réplicas para instancias de Cloud SQL. Esto se hace mediante la redundancias de datos con instancias de espera. 
+
+- Escalabilidad (Horizontal): Se cubre con el uso del kubernetes engine que permite escalabilidad horizontal gracias a los nodos disponibles, como también del balanceador de cargas que ofrece.
+
+![alt text](grafico-kubernetes.png)
+
+Disponibilidad: Se ofrece mediante el uso de instancias de Cloud SQL de Google Cloud Platform y el uso de nodos para los contenedores del back, de esta forma si se pierde una instancia primaria, se usa una replicación para mantener disponibles los recursos al cliente.
+
+![alt text](diagrama-base-datos.png)
+
+Transparencia (Replicación): Ahora el sistema cuenta con replicación y es totalmente transparente para el usuario.
+
+Transparencia (Fallas): Nuevamente, al tener el sistema distribuido en distintos nodos e instancias. Es posible que las fallas del sistema sean transparentes al usuario en caso que exista una falla.
+
+![alt text](diagrama-componentes.png)
+
+

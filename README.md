@@ -126,13 +126,28 @@ Transparencia (Replicación): Ahora el sistema cuenta con replicación y es tota
 
 Transparencia (Fallas): Nuevamente, al tener el sistema distribuido en distintos nodos e instancias. Es posible que las fallas del sistema sean transparentes al usuario en caso que exista una falla.
 
-![alt text](diagrama-componentes.PNG)
-
 Transparencia (Ubicacion): Ahora el servidor tiene un dominio propio mejorcomisaria.tk, por lo tanto, es de facil acceso para los clientes de la aplicacion web.
 
+## Diagrama de componentes
+
+![alt text](diagrama-componentes.PNG)
+
+
+## Diagrama de despliegue
 
 A continuacion se muestra el diagrama de despliegue de la arquitectura mostrando los cambios realizados al sistema distribuido:
 
 ![alt text](diagrama-despliegue.png)
+
+
+## Test pep 2
+
+Finalmente, se somete a la aplicacion al mismo test realizado anteriormente, se obtienen los siguientes resultados
+
+![alt text](test-pep2-1.png)
+
+![alt text](test-pep2-2.png)
+
+
 
 

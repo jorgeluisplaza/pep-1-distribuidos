@@ -144,10 +144,25 @@ A continuacion se muestra el diagrama de despliegue de la arquitectura mostrando
 
 Finalmente, se somete a la aplicacion al mismo test realizado anteriormente, se obtienen los siguientes resultados
 
+Demora de cada request durante la prueba:
+
 ![alt text](test-pep2-1.png)
+
+Datos sobre la cantidad de request y la media de tiempo:
 
 ![alt text](test-pep2-2.png)
 
+Resultados del nodo 1:
+
+![alt text](test-nodo1.jpeg)
+
+Resultados del nodo 2:
+
+![alt text](test-nodo2.jpeg)
+
+Resultados del nodo 3:
+
+![alt text](test-nodo3.jpeg)
 
 
 

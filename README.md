@@ -165,4 +165,10 @@ Resultados del nodo 3:
 ![alt text](test-nodo3.jpeg)
 
 
+## Conclusion
+
+Como podemos ver en los resultados del test 2, el cambio en los test es abismal, en la pep 1 la media de respuesta del sistema era de 1587 milisegundos con un numero de consultas cercano a 25.206 y con los cambios realizados a la arquitectura, se logra una media de respuesta 540 milisegundos, es decir, casi 1/3 del test anterior y con un 38 mil consultas realizadas. Esto se debe principalmente al uso de los 3 nodos, los cuales sus resultados se encuentra en las imagenes. El sistema, en el momento que se empiezan a realizar muchas consultas, distribuye la carga de los nodos para mantener el sistema estable. Tambien se debe tener en cuenta que anteriormente la base de datos se encontraba en un droplet de digital ocean, mientras que ahora se encuentra en la plataforma de Google Cloud. El escalado horizontal de la aplicacion hizo la gran diferencia. 
+
+
+
 

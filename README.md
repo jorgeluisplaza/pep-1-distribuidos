@@ -130,3 +130,9 @@ Transparencia (Fallas): Nuevamente, al tener el sistema distribuido en distintos
 
 Transparencia (Ubicacion): Ahora el servidor tiene un dominio propio mejorcomisaria.tk, por lo tanto, es de facil acceso para los clientes de la aplicacion web.
 
+
+A continuacion se muestra el diagrama de despliegue de la arquitectura mostrando los cambios realizados al sistema distribuido:
+
+![alt text](diagrama-despliegue.png)
+
+

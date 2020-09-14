@@ -18,13 +18,12 @@
       </div>
       <div class="form-group">
         <label>Motivo del permiso</label>
-        <select v-model="duracion" @change="onChange" class="form-control">
-          <option v-for="option in opciones" v-bind:value="option.value">
+        <select v-model="motivo" @change="onChange" class="form-control">
+          <option v-for="option in opciones" v-bind:value="option.motivo">
             {{ option.motivo }}
           </option>
         </select>
       </div>
-      <label v-if="change">Duración del permiso: {{ duracion }} minutos</label>
       <br>
       <button type="submit" @click="onSubmit" data-toggle="modal" data-target="#exampleModal" class="btn btn-primary">Solicitar</button>
 
@@ -88,7 +87,7 @@
                 cause: this.motivo,
                 minutesExtension: this.duracion,
               }
-              axios.post('http://165.227.1.248:8090/licence/', formData)
+              axios.post('http://35.239.87.217/licence/', formData)
                 .then(res => {
                   const data = res.data;
                   this.id = data.id;

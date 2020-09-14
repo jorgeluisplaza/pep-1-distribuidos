@@ -110,6 +110,7 @@ Los cambios implementados satisfacen las siguientes características:
 - **Escalabilidad: Horizontal**
 - **Disponibilidad**
 - **Transparencia (Fallas)**
+- **Transparencia (Ubicacion)**
 
 Se suben los contenedores disponibles del sistema distribuido a la plataforma de nubes de google (Google Cloud Platform) específicamente se utiliza el engine de Google Kubernetes. Este cuenta con 3 nodos y un balanceador de cargas para el sistema distribuido. Por otra parte, se configura la replicación que se ofrece la PostgreSQL que permite la disponibilidad a través de réplicas para instancias de Cloud SQL. Esto se hace mediante la redundancias de datos con instancias de espera. 
 
@@ -127,4 +128,5 @@ Transparencia (Fallas): Nuevamente, al tener el sistema distribuido en distintos
 
 ![alt text](diagrama-componentes.PNG)
 
+Transparencia (Ubicacion): Ahora el servidor tiene un dominio propio mejorcomisaria.tk, por lo tanto, es de facil acceso para los clientes de la aplicacion web.
 
